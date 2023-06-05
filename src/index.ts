@@ -1133,7 +1133,7 @@ function FlatpickrInstance(
   function buildCloseDiv() {
     var container = document.createElement("div");
     container.className = "flatpickr-bottom-div";
-    container.innerHTML = "<a>Close</a>";
+    container.innerHTML = "<a>Confirm</a>";
     var closeBtn = container.querySelector("a");
     closeBtn.addEventListener("click", self.config.closeBtn);
     closeBtn.instance = self;
