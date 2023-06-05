@@ -617,6 +617,8 @@ function FlatpickrInstance(
     if (self.config.enableTime) {
       fragment.appendChild(buildTime());
     }
+    //Close button Div
+    fragment.appendChild(buildCloseDiv());
 
     toggleClass(
       self.calendarContainer,
@@ -1128,7 +1130,15 @@ function FlatpickrInstance(
 
     return self.monthNav;
   }
-
+  function buildCloseDiv() {
+    var container = document.createElement("div");
+    container.className = "flatpickr-bottom-div";
+    container.innerHTML = "<a>Close</a>";
+    var closeBtn = container.querySelector("a");
+    closeBtn.addEventListener("click", self.config.closeBtn);
+    closeBtn.instance = self;
+    return container;
+  }
   function buildTime() {
     self.calendarContainer.classList.add("hasTime");
     if (self.config.noCalendar)

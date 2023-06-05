@@ -87,6 +87,8 @@ export interface BaseOptions {
   /* Whether calendar should close after date selection */
   closeOnSelect: boolean;
 
+  /* Close btn on bottom */
+  closeBtn: () => boolean;
   /*
     If "mode" is "multiple", this string will be used to join
     selected dates together for the date input value.
